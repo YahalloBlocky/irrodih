@@ -1,0 +1,411 @@
+:root {
+    --bg: #f8f9fc;
+    --card: #fff;
+    --ink: #1b2437;
+    --navy: #14284b;
+    --lt: #e3eefc;
+    --bd: #d8e0ee;
+    --ok: #1a7f4b;
+    --bad: #b3261e
+}
+
+[data-t=dark] {
+    --bg: #0f1624;
+    --card: #17202f;
+    --ink: #e6ecf7;
+    --navy: #8fb8f5;
+    --lt: #1f3050;
+    --bd: #2c3a52
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font: 16px/1.6 system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    overflow-x: hidden
+}
+
+.top {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 16px;
+    background: var(--card);
+    border-bottom: 1px solid var(--bd)
+}
+
+.top b {
+    color: var(--navy)
+}
+
+#search {
+    flex: 1;
+    max-width: 320px;
+    margin-left: auto;
+    padding: 8px 10px;
+    border: 1px solid var(--bd);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--ink)
+}
+
+#menu {
+    display: none
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid var(--bd);
+    background: var(--card);
+    color: var(--ink);
+    border-radius: 8px;
+    padding: 8px 14px;
+    min-height: 40px
+}
+
+button.p {
+    background: var(--navy);
+    color: var(--bg);
+    border-color: var(--navy)
+}
+
+[data-t=dark] button.p {
+    color: #0f1624
+}
+
+.layout {
+    display: flex
+}
+
+#side {
+    width: 270px;
+    flex: none;
+    position: sticky;
+    top: 57px;
+    height: calc(100vh - 57px);
+    overflow: auto;
+    padding: 16px;
+    border-right: 1px solid var(--bd);
+    background: var(--card)
+}
+
+#side a {
+    display: block;
+    padding: 7px 10px;
+    border-radius: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 15px
+}
+
+#side a.on {
+    background: var(--lt);
+    color: var(--navy);
+    font-weight: 600
+}
+
+#side summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 7px 10px
+}
+
+#side details a {
+    margin-left: 12px
+}
+
+main {
+    flex: 1;
+    min-width: 0;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 28px 22px 80px
+}
+
+h1 {
+    color: var(--navy);
+    margin: .2em 0
+}
+
+h2 {
+    color: var(--navy)
+}
+
+.card,
+.ex,
+.f {
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    box-shadow: 0 1px 3px #0001
+}
+
+.ex {
+    border-left: 4px solid var(--navy)
+}
+
+.f {
+    background: var(--lt);
+    font: 17px/1.5 Cambria, "Times New Roman", serif;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    overflow-x: auto
+}
+
+.note {
+    background: var(--lt);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin: 12px 0
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px
+}
+
+.tw {
+    overflow-x: auto
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%
+}
+
+td,
+th {
+    border: 1px solid var(--bd);
+    padding: 7px 10px;
+    text-align: left
+}
+
+.bar {
+    height: 8px;
+    background: var(--lt);
+    border-radius: 8px;
+    overflow: hidden
+}
+
+.bar i {
+    display: block;
+    height: 100%;
+    background: var(--navy)
+}
+
+.nav2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 28px;
+    flex-wrap: wrap
+}
+
+svg {
+    max-width: 100%;
+    height: auto;
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 12px
+}
+
+svg text {
+    fill: var(--ink);
+    font: 11px sans-serif
+}
+
+.sl {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 4px 0
+}
+
+.sl input {
+    flex: 1
+}
+
+.opt {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 6px 0
+}
+
+.opt.sel {
+    background: var(--lt);
+    border-color: var(--navy)
+}
+
+.good {
+    color: var(--ok)
+}
+
+.badc {
+    color: var(--bad)
+}
+
+.qn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0
+}
+
+.qn button {
+    width: 40px;
+    padding: 0
+}
+
+.qn .ans {
+    background: var(--lt)
+}
+
+#up {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    display: none;
+    z-index: 15
+}
+
+#scrim {
+    display: none
+}
+
+@media(max-width:800px) {
+    #menu {
+        display: block
+    }
+
+    #side {
+        position: fixed;
+        left: 0;
+        top: 57px;
+        z-index: 30;
+        transform: translateX(-100%);
+        transition: transform .2s;
+        width: 80%;
+        max-width: 300px
+    }
+
+    body.open #side {
+        transform: none
+    }
+
+    body.open #scrim {
+        display: block;
+        position: fixed;
+        inset: 57px 0 0;
+        background: #0006;
+        z-index: 25
+    }
+
+    main {
+        padding: 18px 14px 80px
+    }
+
+    #search {
+        max-width: none
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    * {
+        transition: none !important
+    }
+}
+
+/* Animations (disabled automatically by the reduced-motion rule above) */
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(10px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(.9);
+        opacity: 0
+    }
+
+    60% {
+        transform: scale(1.04)
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+main.in {
+    animation: rise .35s ease-out
+}
+
+.card,
+.ex,
+.f,
+button,
+#side a,
+.opt {
+    transition: transform .15s, box-shadow .15s, background .15s, border-color .15s
+}
+
+.grid .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px #0002
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px #0002
+}
+
+button:active {
+    transform: scale(.97)
+}
+
+.opt.sel {
+    animation: pop .2s ease-out
+}
+
+.bar i {
+    transition: width .5s ease
+}
+
+#side a:hover {
+    background: var(--lt)
+}
+
+#up {
+    animation: pop .25s
+}
+
+svg * {
+    transition: all .15s
+}
+
+.card h2:first-child+div,
+.card:has(.good) {
+    animation: rise .3s ease-out
+}
